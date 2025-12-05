@@ -9,7 +9,7 @@
     content="Official site of Andy Shepherd – sports broadcaster, anchor and fight-night storyteller for major events including WWE, UFC, PFL, Bellator, ESPN, Red Bull, Nike and Under Armour."
   />
 
-  <!-- FAVICONS (put corresponding files in /images) -->
+  <!-- FAVICONS (files should live in /images) -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
@@ -51,7 +51,7 @@
       --radius-lg: 18px;
       --radius-md: 12px;
       --radius-pill: 999px;
-      --max-width: 1120px;
+      --max-width: 980px;
       --transition: 180ms ease-out;
     }
 
@@ -89,7 +89,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Layout shell */
     .page {
       min-height: 100vh;
       padding: 24px 16px 48px;
@@ -105,9 +104,10 @@
       border-radius: 26px;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(0, 0, 0, 0.02);
-      padding: 20px 20px 26px;
+      padding: 20px 20px 24px;
     }
 
+    /* HEADER */
     header.site-header {
       display: flex;
       justify-content: space-between;
@@ -180,24 +180,17 @@
       font-weight: 500;
     }
 
-    /* Hero */
+    /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
-      gap: 22px;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 24px;
       margin-bottom: 24px;
+      align-items: center;
     }
 
     .hero-main {
-      padding: 18px 16px 18px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(
-        135deg,
-        #ffffff 0,
-        #fbfbff 40%,
-        #f1f2f8 100%
-      );
-      border: 1px solid var(--border-soft);
+      padding: 16px 0 4px;
     }
 
     .hero-kicker {
@@ -217,24 +210,144 @@
     }
 
     .hero-subtitle {
-      font-size: 15px;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
       color: var(--text-muted-dark);
-      margin-bottom: 12px;
-      max-width: 560px;
+      margin-bottom: 8px;
+    }
+
+    .hero-video {
+      margin: 10px 0 10px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-subtle);
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+
+    .hero-video iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
     }
 
     .hero-copy {
       font-size: 13px;
       color: var(--text-muted-dark);
-      margin-bottom: 14px;
       max-width: 560px;
     }
 
-    .hero-cta-row {
+    .hero-image {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    /* AS SEEN ON */
+    .seen-on {
+      margin-bottom: 22px;
+      padding: 12px 14px 10px;
+      border-radius: 16px;
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .seen-on-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted-dark);
+      margin-bottom: 6px;
+    }
+
+    .seen-on-logos {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       align-items: center;
+      font-size: 12px;
+    }
+
+    .seen-on-logos span {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #ffffff;
+      color: #33343d;
+      opacity: 0.9;
+    }
+
+    /* KEY CREDITS */
+    .section {
+      margin-bottom: 22px;
+    }
+
+    .section-header {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      color: var(--text-muted-dark);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .credits-list {
+      border-radius: 18px;
+      background: var(--bg-card-soft);
+      border: 1px solid var(--border-soft);
+      padding: 14px 14px 10px;
+      display: grid;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .credit-line strong {
+      font-weight: 600;
+    }
+
+    .credit-line span {
+      color: var(--text-muted-dark);
+    }
+
+    /* CONTACT */
+    .contact-panel {
+      border-radius: 18px;
+      background: var(--bg-dark-soft);
+      padding: 16px 14px 14px;
+      color: var(--text-main-light);
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .contact-heading {
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .contact-copy {
+      font-size: 13px;
+      color: var(--text-muted-light);
       margin-bottom: 10px;
     }
 
@@ -262,300 +375,6 @@
       filter: brightness(1.02);
     }
 
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border-soft);
-      font-size: 13px;
-      background: #ffffff;
-      color: var(--text-muted-dark);
-      cursor: pointer;
-      transition: background var(--transition), color var(--transition),
-        border-color var(--transition), transform var(--transition),
-        box-shadow var(--transition);
-    }
-
-    .btn-secondary:hover {
-      background: #f5f5f7;
-      color: var(--text-main-dark);
-      border-color: rgba(0, 0, 0, 0.12);
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-subtle);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
-      align-items: center;
-      font-size: 11px;
-      color: var(--text-muted-dark);
-      margin-top: 6px;
-    }
-
-    .hero-meta-label {
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 10px;
-    }
-
-    .hero-meta-chip {
-      padding: 4px 8px;
-      border-radius: var(--radius-pill);
-      background: rgba(248, 249, 252, 0.9);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      font-size: 11px;
-    }
-
-    .hero-reel {
-      padding: 14px;
-      border-radius: var(--radius-lg);
-      background: var(--bg-dark);
-      color: var(--text-main-light);
-      box-shadow: var(--shadow-subtle);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .hero-reel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .hero-reel-title {
-      font-size: 13px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted-light);
-    }
-
-    .hero-reel-tag {
-      padding: 3px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      font-size: 11px;
-      color: var(--accent-gold);
-    }
-
-    .reel-frame {
-      position: relative;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: #000000;
-      aspect-ratio: 16 / 9;
-    }
-
-    .reel-frame iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-
-    .trusted-strip {
-      margin-top: 10px;
-      padding: 6px 8px 4px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 11px;
-      color: var(--text-muted-light);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .trusted-label {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 10px;
-      color: var(--text-muted-light);
-    }
-
-    .trusted-logos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      font-size: 11px;
-    }
-
-    .trusted-logos span {
-      opacity: 0.82;
-    }
-
-    /* Section shell */
-    .section {
-      margin-bottom: 26px;
-    }
-
-    .section-header {
-      margin-bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-    }
-
-    .section-title {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .section-kicker {
-      font-size: 11px;
-      color: var(--text-muted-dark);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    /* Story section */
-    .story-panel {
-      border-radius: var(--radius-lg);
-      background: var(--bg-card-soft);
-      border: 1px solid var(--border-soft);
-      padding: 18px 16px;
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
-      gap: 18px;
-    }
-
-    .story-text p {
-      font-size: 14px;
-      color: var(--text-main-dark);
-    }
-
-    .story-text p + p {
-      margin-top: 8px;
-    }
-
-    .story-quote {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text-main-dark);
-      border-left: 3px solid var(--accent-gold);
-      padding-left: 12px;
-    }
-
-    .story-image {
-      border-radius: 14px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .service-card {
-      border-radius: var(--radius-md);
-      background: var(--bg-card-soft);
-      border: 1px solid var(--border-soft);
-      padding: 12px 12px 11px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
-    }
-
-    .service-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .service-tag {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted-dark);
-      margin-bottom: 6px;
-    }
-
-    .service-copy {
-      font-size: 12px;
-      color: var(--text-muted-dark);
-    }
-
-    /* Highlights */
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .highlight-card {
-      border-radius: var(--radius-md);
-      background: var(--bg-card-light);
-      border: 1px solid var(--border-soft);
-      padding: 10px 11px;
-    }
-
-    .highlight-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .highlight-meta {
-      font-size: 11px;
-      color: var(--text-muted-dark);
-      margin-bottom: 6px;
-    }
-
-    .highlight-copy {
-      font-size: 12px;
-      color: var(--text-muted-dark);
-    }
-
-    /* Contact */
-    .contact-panel {
-      border-radius: var(--radius-lg);
-      background: var(--bg-dark-soft);
-      padding: 18px 16px 16px;
-      color: var(--text-main-light);
-      display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
-      gap: 18px;
-    }
-
-    .contact-heading {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .contact-copy {
-      font-size: 13px;
-      color: var(--text-muted-light);
-      margin-bottom: 12px;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .contact-secondary {
-      font-size: 11px;
-      color: var(--text-muted-light);
-    }
-
     .contact-socials {
       font-size: 12px;
       color: var(--text-muted-light);
@@ -574,7 +393,7 @@
     }
 
     footer.site-footer {
-      margin-top: 18px;
+      margin-top: 16px;
       padding-top: 10px;
       border-top: 1px solid #e3e4ea;
       display: flex;
@@ -610,14 +429,8 @@
       .hero {
         grid-template-columns: minmax(0, 1fr);
       }
-      .story-panel {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .highlights-grid {
-        grid-template-columns: minmax(0, 1fr);
+      .hero-image {
+        order: -1;
       }
       .contact-panel {
         grid-template-columns: minmax(0, 1fr);
@@ -633,12 +446,12 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      .services-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
       nav.site-nav {
         width: 100%;
         justify-content: flex-start;
+      }
+      .seen-on-logos span {
+        font-size: 11px;
       }
     }
   </style>
@@ -656,50 +469,21 @@
           </div>
         </div>
         <nav class="site-nav">
-          <a href="#reel" class="primary-link">Watch reel</a>
-          <a href="#story">Story</a>
-          <a href="#services">What I do</a>
-          <a href="#highlights">Highlights</a>
-          <a href="#contact">Book Andy</a>
+          <a href="#top" class="primary-link">Home</a>
+          <a href="#credits">Credits</a>
+          <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <!-- HERO -->
-      <section class="hero" id="reel">
+      <section class="hero" id="top">
         <div class="hero-main">
           <div class="hero-kicker">Live sport · Studio · Commentary</div>
           <h1 class="hero-title">Broadcasting the story behind the action.</h1>
-          <p class="hero-subtitle">
-            Andy Shepherd is a sports broadcaster with experience across major events and a specialism in live combat sports.
-            He has worked with organisations including WWE, UFC, PFL, Bellator, ESPN, Red Bull, Nike and Under Armour, bringing
-            energy, clarity and story to every broadcast.
-          </p>
-          <p class="hero-copy">
-            From sold-out arenas to studio shows and digital-first content, Andy’s focus is the same:
-            make the event clearer, more gripping and more memorable for the audience.
-          </p>
+          <p class="hero-subtitle">Sports broadcaster &amp; fight-night storyteller.</p>
 
-          <div class="hero-cta-row">
-            <a href="#reel" class="btn-primary">Watch showreel</a>
-            <a href="#contact" class="btn-secondary">Booking / contact</a>
-          </div>
-
-          <div class="hero-meta">
-            <span class="hero-meta-label">Experience</span>
-            <span class="hero-meta-chip">Anchor &amp; studio host</span>
-            <span class="hero-meta-chip">Play-by-play commentary</span>
-            <span class="hero-meta-chip">Digital &amp; shoulder content</span>
-            <span class="hero-meta-chip">Brand &amp; live events</span>
-          </div>
-        </div>
-
-        <aside class="hero-reel">
-          <div class="hero-reel-header">
-            <div class="hero-reel-title">Showreel</div>
-            <div class="hero-reel-tag">Highlights · 2 min</div>
-          </div>
-          <div class="reel-frame">
-            <!-- YouTube embed – autoplay muted, start at 6 seconds -->
+          <div class="hero-video">
+            <!-- Showreel – autoplay muted, start at 6 seconds -->
             <iframe
               src="https://www.youtube.com/embed/YpFNpfzYiGE?start=6&autoplay=1&mute=1&controls=1&rel=0"
               title="Andy Shepherd – Showreel"
@@ -707,162 +491,64 @@
               allowfullscreen
             ></iframe>
           </div>
-          <div class="trusted-strip">
-            <div class="trusted-label">Trusted by</div>
-            <div class="trusted-logos">
-              <!-- Replace with SVG logos later if you want -->
-              <span>WWE</span>
-              <span>UFC</span>
-              <span>PFL</span>
-              <span>Bellator</span>
-              <span>ESPN</span>
-              <span>Red Bull</span>
-              <span>Nike</span>
-              <span>Under Armour</span>
-            </div>
-          </div>
-        </aside>
-      </section>
 
-      <!-- STORY / PHILOSOPHY -->
-      <section class="section" id="story">
-        <div class="section-header">
-          <h2 class="section-title">Story first, always</h2>
-          <div class="section-kicker">Philosophy</div>
+          <p class="hero-copy">
+            Andy Shepherd is a sports broadcaster with experience across major events and a specialism in live combat sports.
+            He has worked with organisations including WWE, UFC, PFL, Bellator, ESPN, Red Bull, Nike and Under Armour,
+            bringing energy, clarity and story to every broadcast.
+          </p>
         </div>
-        <div class="story-panel">
-          <div class="story-text">
-            <p class="story-quote">
-              Sport comes alive when its stories are clear. My role is to shape the action into something the audience can feel —
-              elevating every moment, sharpening the emotion, and turning great competition into unforgettable experience.
-            </p>
-            <p>
-              Whether it’s anchoring a live broadcast, calling play-by-play or hosting shoulder programming,
-              Andy focuses on the narrative thread. He connects new viewers and hardcore fans alike to what matters most:
-              the stakes, the personalities and the turning points that define an event.
-            </p>
-          </div>
-          <div class="story-image">
-            <!-- Use one of your action shots here, e.g. Bellator or ESPN cage-side -->
-            <img src="images/story-broadcast.jpg" alt="Andy Shepherd broadcasting live at a major event" />
-          </div>
+
+        <div class="hero-image">
+          <!-- On-stage PFL image -->
+          <img src="images/hero-pfl.jpg" alt="Andy Shepherd on stage hosting a PFL event" />
         </div>
       </section>
 
-      <!-- SERVICES -->
-      <section class="section" id="services">
-        <div class="section-header">
-          <h2 class="section-title">What I do</h2>
-          <div class="section-kicker">On-air roles</div>
-        </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-tag">Anchor · Studio</div>
-            <h3 class="service-title">Anchor &amp; studio hosting</h3>
-            <p class="service-copy">
-              Hosting live shows, build-up programming and studio coverage for major events, framing the story,
-              sharpening the stakes and guiding viewers through the action.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-tag">Commentary</div>
-            <h3 class="service-title">Play-by-play commentary</h3>
-            <p class="service-copy">
-              Calling live action in real time, balancing detail and drama to make every moment clearer,
-              more engaging and more meaningful for the audience.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-tag">Digital · Shoulder</div>
-            <h3 class="service-title">Digital &amp; shoulder content hosting</h3>
-            <p class="service-copy">
-              Hosting interviews, features and digital-first content that deepen the narrative around events,
-              adding context and character to keep fans invested before and after fight night.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-tag">In-arena</div>
-            <h3 class="service-title">Ring announcing &amp; MC</h3>
-            <p class="service-copy">
-              In-arena voice for live events — from walkouts to final decision — setting the tone and maintaining
-              energy in the building and on the broadcast.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-tag">Brands · Events</div>
-            <h3 class="service-title">Branded events &amp; live shows</h3>
-            <p class="service-copy">
-              Event hosting for brands such as Red Bull, Nike and Under Armour, connecting athletes, partners
-              and audiences through clear, high-energy storytelling.
-            </p>
-          </article>
+      <!-- AS SEEN ON -->
+      <section class="seen-on">
+        <div class="seen-on-label">As seen on</div>
+        <div class="seen-on-logos">
+          <!-- Swap these text labels for SVG logos later if you want -->
+          <span>WWE</span>
+          <span>UFC</span>
+          <span>PFL</span>
+          <span>Bellator</span>
+          <span>ESPN</span>
+          <span>Red Bull</span>
+          <span>Nike</span>
+          <span>Under Armour</span>
         </div>
       </section>
 
-      <!-- HIGHLIGHTS -->
-      <section class="section" id="highlights">
+      <!-- KEY CREDITS -->
+      <section class="section" id="credits">
         <div class="section-header">
-          <h2 class="section-title">Highlights</h2>
+          <h2 class="section-title">Key credits</h2>
           <div class="section-kicker">Selected work</div>
         </div>
-        <div class="highlights-grid">
-          <article class="highlight-card">
-            <h3 class="highlight-title">First British play-by-play commentator for WWE</h3>
-            <div class="highlight-meta">WWE · Play-by-play · Global TV</div>
-            <p class="highlight-copy">
-              Lead voice on WWE programming, combining in-arena announcing, commentary and pre-show hosting
-              across live events and weekly television.
-            </p>
-          </article>
-
-          <article class="highlight-card">
-            <h3 class="highlight-title">Host of David Haye’s comeback boxing events</h3>
-            <div class="highlight-meta">Live boxing · UK TV</div>
-            <p class="highlight-copy">
-              Helped welcome live boxing back to UK television as the on-screen host for Haye’s comeback shows,
-              guiding viewers through the build-up and fight night.
-            </p>
-          </article>
-
-          <article class="highlight-card">
-            <h3 class="highlight-title">PFL Europe &amp; international events</h3>
-            <div class="highlight-meta">PFL · Play-by-play · MC · Pre-show</div>
-            <p class="highlight-copy">
-              Play-by-play commentator, MC and pre-show host for Professional Fighters League events across Europe
-              and international broadcasts.
-            </p>
-          </article>
-
-          <article class="highlight-card">
-            <h3 class="highlight-title">Bellator anchoring</h3>
-            <div class="highlight-meta">Bellator MMA · Studio anchor</div>
-            <p class="highlight-copy">
-              Studio anchor and on-air host for Bellator broadcasts, shaping the narrative around cards,
-              key storylines and championship moments.
-            </p>
-          </article>
-
-          <article class="highlight-card">
-            <h3 class="highlight-title">ESPN programming</h3>
-            <div class="highlight-meta">ESPN · PFL · World’s Strongest Man</div>
-            <p class="highlight-copy">
-              Hosting shows for ESPN, including coverage of PFL and World’s Strongest Man, bringing clarity
-              and energy to global audiences.
-            </p>
-          </article>
-
-          <article class="highlight-card">
-            <h3 class="highlight-title">Red Bull, Nike &amp; Under Armour</h3>
-            <div class="highlight-meta">Brand &amp; event hosting</div>
-            <p class="highlight-copy">
-              Event and content host for major brand activations, including Red Bull Cliff Diving and live events
-              for Nike and Under Armour.
-            </p>
-          </article>
+        <div class="credits-list">
+          <div class="credit-line">
+            <strong>WWE</strong> · <span>Play-by-play commentator, ring announcer, pre-show &amp; content host</span>
+          </div>
+          <div class="credit-line">
+            <strong>PFL</strong> · <span>Play-by-play commentator, MC / ring announcer, pre-show host</span>
+          </div>
+          <div class="credit-line">
+            <strong>UFC</strong> · <span>Digital content host</span>
+          </div>
+          <div class="credit-line">
+            <strong>Bellator</strong> · <span>Studio anchor &amp; on-air host</span>
+          </div>
+          <div class="credit-line">
+            <strong>ESPN</strong> · <span>Host for programming including PFL &amp; World’s Strongest Man</span>
+          </div>
+          <div class="credit-line">
+            <strong>Red Bull</strong> · <span>Host for Red Bull Cliff Diving and live sports content</span>
+          </div>
+          <div class="credit-line">
+            <strong>Nike &amp; Under Armour</strong> · <span>Event host for major brand activations</span>
+          </div>
         </div>
       </section>
 
@@ -876,17 +562,15 @@
           <div>
             <h3 class="contact-heading">Book Andy for your next broadcast</h3>
             <p class="contact-copy">
-              For commentary, studio hosting, digital content or branded events, please use the booking button
-              below to get in touch with Andy’s team.
+              For commentary, studio hosting, digital content or branded events, please use the booking button below
+              to get in touch with Andy’s team.
             </p>
-            <div class="contact-actions">
-              <a href="mailto:andy@andyshep.com?subject=Booking%20enquiry%20for%20Andy%20Shepherd" class="btn-primary">
-                Book Andy
-              </a>
-              <span class="contact-secondary">
-                Please include key event details, dates and broadcaster/brand information where possible.
-              </span>
-            </div>
+            <a
+              href="mailto:andy@andyshep.com?subject=Booking%20enquiry%20for%20Andy%20Shepherd"
+              class="btn-primary"
+            >
+              Book Andy
+            </a>
           </div>
           <div>
             <p class="contact-socials">
@@ -902,9 +586,8 @@
       <footer class="site-footer">
         <div>© 2025 Andy Shepherd. All rights reserved.</div>
         <div class="footer-links">
-          <a href="#reel">Reel</a>
-          <a href="#services">Roles</a>
-          <a href="#highlights">Highlights</a>
+          <a href="#top">Top</a>
+          <a href="#credits">Credits</a>
           <a href="#contact">Contact</a>
         </div>
       </footer>
