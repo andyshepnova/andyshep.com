@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,10 @@
     content="Official site of Andy Shepherd – sports broadcaster, studio host and storyteller for major events including WWE, UFC, PFL, Bellator, ESPN, Red Bull, Nike and Under Armour."
   />
 
-  <!-- FAVICONS (optional; keep only if these files exist) -->
+  <!-- PRIORITISE HERO IMAGE (matches your repo root filename exactly) -->
+  <link rel="preload" as="image" href="IMG_5715 2.JPG" />
+
+  <!-- FAVICONS (keep only if these files exist) -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
@@ -37,7 +39,6 @@
     :root {
       --text-main: #111216;
       --text-muted: #5a5e69;
-      --text-muted-2: #737787;
 
       --card: #ffffff;
       --card-soft: #fafafc;
@@ -51,7 +52,6 @@
 
       --radius-xl: 26px;
       --radius-lg: 18px;
-      --radius-md: 12px;
       --radius-pill: 999px;
 
       --max: 1020px;
@@ -99,13 +99,13 @@
       margin-bottom: 18px;
     }
 
+    /* Typography-only lockup (no orb) */
     .brand {
       display: flex;
       flex-direction: column;
       gap: 3px;
     }
 
-    /* Removed yellow orb completely: typography-only lockup */
     .brand-name {
       font-family: "Space Grotesk", system-ui, sans-serif;
       font-weight: 700;
@@ -214,6 +214,7 @@
       overflow: hidden;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(0, 0, 0, 0.06);
+      background: #fff;
     }
 
     /* AS SEEN ON */
@@ -408,7 +409,7 @@
       .brand-name { font-size: 13px; }
       .brand-tagline { font-size: 13px; }
       nav.site-nav { width: 100%; }
-      .seen-on-logos img { height: 24px; max-width: 105px; }
+      .seen-on-logos img { height: 24px; max-width: 110px; }
     }
   </style>
 </head>
@@ -437,7 +438,7 @@
         <p class="hero-subtitle">Sports broadcaster &amp; fight-night storyteller.</p>
 
         <div class="hero-video">
-          <!-- YouTube embed: autoplay must be muted (browser rules). HD is requested but not guaranteed by YouTube. -->
+          <!-- Autoplay must be muted (browser rules). HD is requested but not guaranteed by YouTube. -->
           <iframe
             src="https://www.youtube.com/embed/YpFNpfzYiGE?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&vq=hd1080"
             title="Andy Shepherd – Showreel"
@@ -454,8 +455,16 @@
       </div>
 
       <div class="hero-image">
-        <!-- IMPORTANT: this matches your repo root filename exactly (including spaces + .JPG) -->
-        <img src="IMG_5715 2.JPG" alt="Andy Shepherd on stage hosting a PFL event" />
+        <!-- IMPORTANT: exact match to your repo root filename (case + spaces + extension) -->
+        <img
+          src="IMG_5715 2.JPG"
+          alt="Andy Shepherd on stage hosting a PFL event"
+          width="1200"
+          height="1500"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
     </section>
 
@@ -463,17 +472,16 @@
     <section class="seen-on" aria-label="Broadcast credits include">
       <div class="seen-on-label">Broadcast credits include</div>
 
-      <!-- Upload these files to /logos in your repo root (lowercase/hyphenated).
-           You can use .png instead of .svg, just match the extension in the src. -->
+      <!-- Your folder is named 'Logos' (capital L) and filenames below match your screenshot exactly -->
       <div class="seen-on-logos">
-        <img src="logos/wwe.svg" alt="WWE" />
-        <img src="logos/ufc.svg" alt="UFC" />
-        <img src="logos/pfl.svg" alt="PFL" />
-        <img src="logos/bellator.svg" alt="Bellator" />
-        <img src="logos/espn.svg" alt="ESPN" />
-        <img src="logos/red-bull.svg" alt="Red Bull" />
-        <img src="logos/nike.svg" alt="Nike" />
-        <img src="logos/under-armour.svg" alt="Under Armour" />
+        <img src="Logos/wwe.png" alt="WWE" />
+        <img src="Logos/ufc.svg.png" alt="UFC" />
+        <img src="Logos/pfl.png" alt="PFL" />
+        <img src="Logos/bellator.png" alt="Bellator" />
+        <img src="Logos/espn.svg.png" alt="ESPN" />
+        <img src="Logos/redbull.svg" alt="Red Bull" />
+        <img src="Logos/nike.svg" alt="Nike" />
+        <img src="Logos/underarmour.svg" alt="Under Armour" />
       </div>
     </section>
 
