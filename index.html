@@ -214,7 +214,16 @@
       overflow: hidden;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(0, 0, 0, 0.06);
-      background: #fff;
+      background: #ffffff;
+      aspect-ratio: 4 / 5; /* clean crop approach */
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;     /* crop, never stretch */
+      object-position: center;
+      display: block;
     }
 
     /* AS SEEN ON */
@@ -234,7 +243,7 @@
       margin-bottom: 10px;
     }
 
-    /* Logo strip */
+    /* Logo strip: uniform + always colour */
     .seen-on-logos {
       display: flex;
       flex-wrap: wrap;
@@ -244,16 +253,16 @@
 
     .seen-on-logos img {
       height: 28px;
-      max-width: 120px;
+      width: auto;
+      max-width: 110px;
       object-fit: contain;
-      opacity: 0.86;
-      filter: grayscale(100%);
-      transition: opacity var(--ease), filter var(--ease), transform var(--ease);
+      display: block;
+      opacity: 1;
+      filter: none; /* always colour */
+      transition: transform var(--ease);
     }
 
     .seen-on-logos img:hover {
-      opacity: 1;
-      filter: grayscale(0%);
       transform: translateY(-1px);
     }
 
@@ -455,7 +464,7 @@
       </div>
 
       <div class="hero-image">
-        <!-- IMPORTANT: exact match to your repo root filename (case + spaces + extension) -->
+        <!-- Exact match to your repo root filename (case + spaces + extension) -->
         <img
           src="IMG_5715 2.JPG"
           alt="Andy Shepherd on stage hosting a PFL event"
@@ -472,7 +481,7 @@
     <section class="seen-on" aria-label="Broadcast credits include">
       <div class="seen-on-label">Broadcast credits include</div>
 
-      <!-- Your folder is named 'Logos' (capital L) and filenames below match your screenshot exactly -->
+      <!-- Folder is 'Logos' (capital L) and filenames match your screenshot exactly -->
       <div class="seen-on-logos">
         <img src="Logos/wwe.png" alt="WWE" />
         <img src="Logos/ufc.svg.png" alt="UFC" />
@@ -562,3 +571,4 @@
   </div>
 </body>
 </html>
+   
