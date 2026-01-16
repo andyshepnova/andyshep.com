@@ -52,6 +52,7 @@
 
       --radius-xl: 26px;
       --radius-lg: 18px;
+      --radius-md: 14px;
       --radius-pill: 999px;
 
       --max: 1020px;
@@ -158,7 +159,7 @@
       grid-template-columns: minmax(0, 1.55fr) minmax(0, 1.2fr);
       gap: 26px;
       align-items: start;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
     }
 
     .hero-kicker {
@@ -193,7 +194,7 @@
       border: 1px solid rgba(0, 0, 0, 0.08);
       background: #000;
       aspect-ratio: 16 / 9;
-      margin-bottom: 12px;
+      margin-bottom: 0;
     }
 
     .hero-video iframe {
@@ -201,12 +202,6 @@
       height: 100%;
       border: 0;
       display: block;
-    }
-
-    .hero-copy {
-      font-size: 13px;
-      color: var(--text-muted);
-      max-width: 620px;
     }
 
     .hero-image {
@@ -226,6 +221,21 @@
       display: block;
     }
 
+    /* FULL-WIDTH BIO (fixes the “half page” look) */
+    .bio-wide {
+      margin: 14px 0 22px;
+      padding: 14px 14px 12px;
+      border-radius: 16px;
+      background: var(--card-soft);
+      border: 1px solid var(--border);
+    }
+
+    .bio-wide p {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: none; /* critical: full width */
+    }
+
     /* AS SEEN ON */
     .seen-on {
       margin: 10px 0 22px;
@@ -243,27 +253,41 @@
       margin-bottom: 10px;
     }
 
-    /* Logo strip: uniform + always colour */
+    /* LOGOS: uniform "tiles" so everything appears consistent */
     .seen-on-logos {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 14px;
       align-items: center;
     }
 
-    .seen-on-logos img {
-      height: 28px;
-      width: auto;
-      max-width: 110px;
-      object-fit: contain;
-      display: block;
-      opacity: 1;
-      filter: none; /* always colour */
+    .logo-tile {
+      width: 124px;               /* uniform box width */
+      height: 40px;               /* uniform box height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius-pill);
+      padding: 6px 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       transition: transform var(--ease);
     }
 
-    .seen-on-logos img:hover {
+    .logo-tile:hover {
       transform: translateY(-1px);
+    }
+
+    .logo-tile img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: none; /* always colour */
+      opacity: 1;
     }
 
     /* SECTIONS */
@@ -418,7 +442,7 @@
       .brand-name { font-size: 13px; }
       .brand-tagline { font-size: 13px; }
       nav.site-nav { width: 100%; }
-      .seen-on-logos img { height: 24px; max-width: 110px; }
+      .logo-tile { width: 110px; height: 38px; }
     }
   </style>
 </head>
@@ -455,16 +479,9 @@
             allowfullscreen
           ></iframe>
         </div>
-
-        <p class="hero-copy">
-          Andy Shepherd is a sports broadcaster with experience across major events and a specialism in live combat sports.
-          He has worked with organisations including WWE, UFC, PFL, Bellator, ESPN, Red Bull, Nike and Under Armour,
-          bringing energy, clarity and story to every broadcast.
-        </p>
       </div>
 
       <div class="hero-image">
-        <!-- Exact match to your repo root filename (case + spaces + extension) -->
         <img
           src="IMG_5715 2.JPG"
           alt="Andy Shepherd on stage hosting a PFL event"
@@ -477,20 +494,29 @@
       </div>
     </section>
 
+    <!-- FULL WIDTH BIO -->
+    <section class="bio-wide" aria-label="Short bio">
+      <p>
+        Andy Shepherd is a sports broadcaster with experience across major events and a specialism in live combat sports.
+        He has worked with organisations including WWE, UFC, PFL, Bellator, ESPN, Red Bull, Nike and Under Armour,
+        bringing energy, clarity and story to every broadcast.
+      </p>
+    </section>
+
     <!-- AS SEEN ON (LOGOS) -->
     <section class="seen-on" aria-label="Broadcast credits include">
       <div class="seen-on-label">Broadcast credits include</div>
 
       <!-- Folder is 'Logos' (capital L) and filenames match your screenshot exactly -->
       <div class="seen-on-logos">
-        <img src="Logos/wwe.png" alt="WWE" />
-        <img src="Logos/ufc.svg.png" alt="UFC" />
-        <img src="Logos/pfl.png" alt="PFL" />
-        <img src="Logos/bellator.png" alt="Bellator" />
-        <img src="Logos/espn.svg.png" alt="ESPN" />
-        <img src="Logos/redbull.svg" alt="Red Bull" />
-        <img src="Logos/nike.svg" alt="Nike" />
-        <img src="Logos/underarmour.svg" alt="Under Armour" />
+        <div class="logo-tile"><img src="Logos/wwe.png" alt="WWE" /></div>
+        <div class="logo-tile"><img src="Logos/ufc.svg.png" alt="UFC" /></div>
+        <div class="logo-tile"><img src="Logos/pfl.png" alt="PFL" /></div>
+        <div class="logo-tile"><img src="Logos/bellator.png" alt="Bellator" /></div>
+        <div class="logo-tile"><img src="Logos/espn.svg.png" alt="ESPN" /></div>
+        <div class="logo-tile"><img src="Logos/redbull.svg" alt="Red Bull" /></div>
+        <div class="logo-tile"><img src="Logos/nike.svg" alt="Nike" /></div>
+        <div class="logo-tile"><img src="Logos/underarmour.svg" alt="Under Armour" /></div>
       </div>
     </section>
 
@@ -571,4 +597,3 @@
   </div>
 </body>
 </html>
-   
