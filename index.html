@@ -6,34 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Official site of Andy Shepherd – sports broadcaster, studio host and storyteller for major events including WWE, UFC, PFL, Bellator, ESPN, Red Bull, Nike and Under Armour."
+    content="Official site of Andy Shepherd – sports broadcaster, studio host and fight-night storyteller for major global events."
   />
 
-  <!-- PRIORITISE HERO IMAGE (matches your repo root filename exactly) -->
+  <!-- PRIORITISE HERO IMAGE -->
   <link rel="preload" as="image" href="IMG_5715 2.JPG" />
-
-  <!-- FAVICONS (keep only if these files exist) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png" />
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-  <link rel="shortcut icon" href="images/favicon.ico" />
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
-
-  <!-- GOOGLE ANALYTICS (replace G-XXXXXXXXXX with your GA4 Measurement ID) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
 
   <style>
     :root {
@@ -44,15 +29,11 @@
       --card-soft: #fafafc;
       --border: #e2e3ea;
 
-      --accent: #d9a441;
-      --accent-soft: rgba(217, 164, 65, 0.18);
-
       --shadow-strong: 0 18px 45px rgba(0, 0, 0, 0.16);
       --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.10);
 
       --radius-xl: 26px;
       --radius-lg: 18px;
-      --radius-md: 14px;
       --radius-pill: 999px;
 
       --max: 1020px;
@@ -61,15 +42,12 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    img { max-width: 100%; display: block; }
+    img { display: block; }
     a { color: inherit; text-decoration: none; }
 
-    /* OPTION 2: Subtle Studio Gradient background */
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", system-ui, sans-serif;
       color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.55;
       background: radial-gradient(
         circle at top center,
         #ffffff 0%,
@@ -79,6 +57,7 @@
       padding: 24px 16px 48px;
       display: flex;
       justify-content: center;
+      line-height: 1.55;
     }
 
     .shell {
@@ -87,162 +66,111 @@
       background: var(--card);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-strong);
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      padding: 22px 22px 26px;
+      border: 1px solid rgba(0,0,0,0.03);
+      padding: 22px;
     }
 
     /* HEADER */
-    header.site-header {
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
       margin-bottom: 18px;
     }
 
-    /* Typography-only lockup (no orb) */
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
     .brand-name {
-      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
-      letter-spacing: 0.20em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       font-size: 14px;
     }
 
     .brand-tagline {
-      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-family: "Space Grotesk", sans-serif;
       font-size: 14px;
       font-weight: 600;
       color: var(--text-muted);
     }
 
-    nav.site-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-family: "Space Grotesk", system-ui, sans-serif;
+    nav a {
+      font-family: "Space Grotesk", sans-serif;
       font-size: 14px;
-    }
-
-    nav.site-nav a {
       padding: 7px 12px;
       border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-      color: var(--text-muted);
-      background: rgba(245, 245, 247, 0.7);
-      transition: background var(--ease), border-color var(--ease), color var(--ease), transform var(--ease);
-    }
-
-    nav.site-nav a:hover {
-      border-color: rgba(0, 0, 0, 0.12);
-      color: var(--text-main);
-      background: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    nav.site-nav a.primary {
-      border-color: var(--accent-soft);
-      background: rgba(217, 164, 65, 0.10);
-      color: var(--text-main);
-      font-weight: 600;
+      background: rgba(245,245,247,0.7);
+      margin-left: 8px;
     }
 
     /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(0, 1.2fr);
+      grid-template-columns: 1.6fr 1.2fr;
       gap: 26px;
-      align-items: start;
       margin-bottom: 14px;
     }
 
-    .hero-kicker {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 6px;
-      margin-bottom: 8px;
-    }
-
-    .hero-title {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: clamp(34px, 4.2vw, 52px);
-      line-height: 1.03;
-      font-weight: 700;
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.05;
       margin-bottom: 10px;
     }
 
-    .hero-subtitle {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: 18px;
+    .hero p.sub {
+      font-family: "Space Grotesk", sans-serif;
       font-weight: 600;
       color: var(--text-muted);
       margin-bottom: 12px;
     }
 
     .hero-video {
+      aspect-ratio: 16 / 9;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      background: #000;
-      aspect-ratio: 16 / 9;
-      margin-bottom: 0;
     }
 
     .hero-video iframe {
       width: 100%;
       height: 100%;
       border: 0;
-      display: block;
     }
 
     .hero-image {
+      aspect-ratio: 4 / 5;
       border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      background: #ffffff;
-      aspect-ratio: 4 / 5; /* clean crop approach */
     }
 
     .hero-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover;     /* crop, never stretch */
-      object-position: center;
-      display: block;
+      object-fit: cover;
     }
 
-    /* FULL-WIDTH BIO (fixes the “half page” look) */
-    .bio-wide {
-      margin: 14px 0 22px;
-      padding: 14px 14px 12px;
+    /* BIO */
+    .bio {
+      margin: 16px 0 22px;
+      padding: 14px;
       border-radius: 16px;
       background: var(--card-soft);
       border: 1px solid var(--border);
-    }
-
-    .bio-wide p {
-      font-size: 13px;
       color: var(--text-muted);
-      max-width: none; /* critical: full width */
+      font-size: 13px;
     }
 
-    /* AS SEEN ON */
+    /* LOGO SECTION – OPTION B */
     .seen-on {
       margin: 10px 0 22px;
-      padding: 12px 14px 12px;
+      padding: 16px;
       border-radius: 16px;
-      background: var(--card-soft);
-      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(40,90,255,0.10) 0%, rgba(255,255,255,0) 55%),
+        radial-gradient(circle at 100% 20%, rgba(0,200,255,0.08) 0%, rgba(255,255,255,0) 55%),
+        #fafafc;
+      border: 1px solid rgba(0,0,0,0.06);
     }
 
     .seen-on-label {
@@ -250,350 +178,98 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    /* LOGOS: uniform "tiles" so everything appears consistent */
-    .seen-on-logos {
-      display: flex;
-      flex-wrap: wrap;
+    /* LOGO GRID – OPTION 1 */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
-      align-items: center;
     }
 
     .logo-tile {
-      width: 124px;               /* uniform box width */
-      height: 40px;               /* uniform box height */
+      height: 54px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: var(--radius-pill);
-      padding: 6px 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-      transition: transform var(--ease);
-    }
-
-    .logo-tile:hover {
-      transform: translateY(-1px);
+      padding: 10px;
     }
 
     .logo-tile img {
       max-height: 100%;
       max-width: 100%;
-      width: auto;
-      height: auto;
       object-fit: contain;
-      display: block;
-      filter: none; /* always colour */
-      opacity: 1;
     }
 
-    /* SECTIONS */
-    .section {
-      margin-bottom: 22px;
-    }
-
-    .section-header {
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-    }
-
-    .section-title {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .section-kicker {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .credits-list {
-      border-radius: var(--radius-lg);
-      background: var(--card-soft);
-      border: 1px solid var(--border);
-      padding: 14px 14px 12px;
-      display: grid;
-      gap: 8px;
-      font-size: 13px;
-    }
-
-    .credit-line strong { font-weight: 700; }
-    .credit-line span { color: var(--text-muted); }
-
-    /* CONTACT */
-    .contact-panel {
-      border-radius: var(--radius-lg);
-      background: #25262c;
-      padding: 16px 14px 14px;
-      color: #f5f5f7;
-      display: grid;
-      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1.35fr);
-      gap: 16px;
-    }
-
-    .contact-heading {
-      font-family: "Space Grotesk", system-ui, sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .contact-copy {
-      font-size: 13px;
-      color: #c1c4ce;
-      margin-bottom: 12px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 16px;
-      border-radius: var(--radius-pill);
-      border: none;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
-      background: linear-gradient(135deg, #f3d07c 0, #d9a441 100%);
-      color: #201a0c;
-      box-shadow: 0 10px 24px rgba(217, 164, 65, 0.42);
-      transition: transform var(--ease), box-shadow var(--ease), filter var(--ease);
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 34px rgba(217, 164, 65, 0.60);
-      filter: brightness(1.02);
-    }
-
-    .contact-socials {
-      font-size: 12px;
-      color: #c1c4ce;
-      line-height: 1.9;
-    }
-
-    .contact-socials a {
-      display: inline-block;
-      margin-right: 10px;
-      border-bottom: 1px solid transparent;
-      transition: color var(--ease), border-color var(--ease);
-    }
-
-    .contact-socials a:hover {
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.75);
-    }
-
-    /* FOOTER */
-    footer.site-footer {
-      margin-top: 16px;
-      padding-top: 10px;
-      border-top: 1px solid #e3e4ea;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 10px;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
-      transition: color var(--ease), border-color var(--ease);
-    }
-
-    .footer-links a:hover {
-      color: var(--text-main);
-      border-color: rgba(0, 0, 0, 0.4);
-    }
-
-    /* Responsive */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero { grid-template-columns: 1fr; }
       .hero-image { order: -1; }
-      .contact-panel { grid-template-columns: minmax(0, 1fr); }
+      .logo-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 600px) {
-      .shell { border-radius: 20px; padding: 18px 16px 22px; }
-      header.site-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .brand-name { font-size: 13px; }
-      .brand-tagline { font-size: 13px; }
-      nav.site-nav { width: 100%; }
-      .logo-tile { width: 110px; height: 38px; }
+      .logo-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 
 <body>
   <div class="shell">
-    <!-- HEADER -->
-    <header class="site-header">
-      <div class="brand">
-        <div class="brand-name">Andy Shepherd</div>
-        <div class="brand-tagline">Sports Broadcaster &amp; Fight-Night Storyteller</div>
-      </div>
 
-      <nav class="site-nav">
-        <a href="#top" class="primary">Home</a>
-        <a href="#credits">Credits</a>
+    <header>
+      <div>
+        <div class="brand-name">Andy Shepherd</div>
+        <div class="brand-tagline">Sports Broadcaster & Fight-Night Storyteller</div>
+      </div>
+      <nav>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="hero-main">
-        <div class="hero-kicker">Live sport · Studio · Commentary</div>
-        <h1 class="hero-title">Broadcasting the story behind the action.</h1>
-        <p class="hero-subtitle">Sports broadcaster &amp; fight-night storyteller.</p>
+    <section class="hero">
+      <div>
+        <h1>Broadcasting the story behind the action.</h1>
+        <p class="sub">Live sport · Studio · Commentary</p>
 
         <div class="hero-video">
-          <!-- Autoplay must be muted (browser rules). HD is requested but not guaranteed by YouTube. -->
           <iframe
-            src="https://www.youtube.com/embed/YpFNpfzYiGE?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&vq=hd1080"
-            title="Andy Shepherd – Showreel"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+            src="https://www.youtube.com/embed/YpFNpfzYiGE?autoplay=1&mute=1&vq=hd1080&rel=0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
 
       <div class="hero-image">
-        <img
-          src="IMG_5715 2.JPG"
-          alt="Andy Shepherd on stage hosting a PFL event"
-          width="1200"
-          height="1500"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <img src="IMG_5715 2.JPG" alt="Andy Shepherd hosting PFL">
       </div>
     </section>
 
-    <!-- FULL WIDTH BIO -->
-    <section class="bio-wide" aria-label="Short bio">
-      <p>
-        Andy Shepherd is a sports broadcaster with experience across major events and a specialism in live combat sports.
-        He has worked with organisations including WWE, UFC, PFL, Bellator, ESPN, Red Bull, Nike and Under Armour,
-        bringing energy, clarity and story to every broadcast.
-      </p>
+    <section class="bio">
+      Andy Shepherd is a sports broadcaster with experience across major global events, specialising in live combat sports. His work focuses on storytelling that elevates the viewer experience and brings clarity, energy and narrative to every broadcast.
     </section>
 
-    <!-- AS SEEN ON (LOGOS) -->
-    <section class="seen-on" aria-label="Broadcast credits include">
+    <section class="seen-on">
       <div class="seen-on-label">Broadcast credits include</div>
 
-      <!-- Folder is 'Logos' (capital L) and filenames match your screenshot exactly -->
-      <div class="seen-on-logos">
-        <div class="logo-tile"><img src="Logos/wwe.png" alt="WWE" /></div>
-        <div class="logo-tile"><img src="Logos/ufc.svg.png" alt="UFC" /></div>
-        <div class="logo-tile"><img src="Logos/pfl.png" alt="PFL" /></div>
-        <div class="logo-tile"><img src="Logos/bellator.png" alt="Bellator" /></div>
-        <div class="logo-tile"><img src="Logos/espn.svg.png" alt="ESPN" /></div>
-        <div class="logo-tile"><img src="Logos/redbull.svg" alt="Red Bull" /></div>
-        <div class="logo-tile"><img src="Logos/nike.svg" alt="Nike" /></div>
-        <div class="logo-tile"><img src="Logos/underarmour.svg" alt="Under Armour" /></div>
+      <div class="logo-grid">
+        <div class="logo-tile"><img src="Logos/wwe.png" alt="WWE"></div>
+        <div class="logo-tile"><img src="Logos/ufc.svg.png" alt="UFC"></div>
+        <div class="logo-tile"><img src="Logos/pfl.png" alt="PFL"></div>
+        <div class="logo-tile"><img src="Logos/bellator.png" alt="Bellator"></div>
+        <div class="logo-tile"><img src="Logos/espn.svg.png" alt="ESPN"></div>
+        <div class="logo-tile"><img src="Logos/redbull.svg" alt="Red Bull"></div>
+        <div class="logo-tile"><img src="Logos/nike.svg" alt="Nike"></div>
+        <div class="logo-tile"><img src="Logos/underarmour.svg" alt="Under Armour"></div>
       </div>
     </section>
 
-    <!-- KEY CREDITS -->
-    <section class="section" id="credits">
-      <div class="section-header">
-        <h2 class="section-title">Key credits</h2>
-        <div class="section-kicker">Selected work</div>
-      </div>
-
-      <div class="credits-list">
-        <div class="credit-line">
-          <strong>WWE</strong> · <span>Play-by-play commentator, ring announcer, pre-show &amp; content host</span>
-        </div>
-        <div class="credit-line">
-          <strong>PFL</strong> · <span>Play-by-play commentator, MC / ring announcer, pre-show host</span>
-        </div>
-        <div class="credit-line">
-          <strong>UFC</strong> · <span>Digital content host</span>
-        </div>
-        <div class="credit-line">
-          <strong>Bellator</strong> · <span>Studio anchor &amp; on-air host</span>
-        </div>
-        <div class="credit-line">
-          <strong>ESPN</strong> · <span>Host for programming including PFL &amp; World’s Strongest Man</span>
-        </div>
-        <div class="credit-line">
-          <strong>Red Bull</strong> · <span>Host for Red Bull Cliff Diving and live sports content</span>
-        </div>
-        <div class="credit-line">
-          <strong>Nike &amp; Under Armour</strong> · <span>Event host for major brand activations</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-        <div class="section-kicker">Bookings &amp; enquiries</div>
-      </div>
-
-      <div class="contact-panel">
-        <div>
-          <div class="contact-heading">Book Andy for your next broadcast</div>
-          <div class="contact-copy">
-            For commentary, studio hosting, digital content or branded events, please use the booking button below
-            to get in touch.
-          </div>
-
-          <a
-            href="mailto:andy@andyshep.com?subject=Booking%20enquiry%20for%20Andy%20Shepherd"
-            class="btn-primary"
-          >
-            Book Andy
-          </a>
-        </div>
-
-        <div>
-          <div class="contact-socials">
-            Connect:
-            <a href="https://x.com/andyshep" target="_blank" rel="noreferrer">@andyshep on X</a>
-            <a href="https://instagram.com/andyshep" target="_blank" rel="noreferrer">@andyshep on Instagram</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div>© 2026 Andy Shepherd. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#top">Top</a>
-        <a href="#credits">Credits</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </footer>
   </div>
 </body>
 </html>
